@@ -8,4 +8,4 @@ If you want to see how to consume in Ruby using `savon` gem, there's a few examp
 
 * [Savon GitHub](https://github.com/savonrb/savon)
 * [Savon docs](https://www.rubydoc.info/gems/savon/0.7.9)
-* [Savon globals config](https://www.savonrb.com/version2/globals.html), Useful to config when creating a client.
+* [Savon globals config](https://www.savonrb.com/version2/globals.html), **useful to config when creating a client.**
