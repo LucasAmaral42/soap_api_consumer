@@ -1,12 +1,16 @@
 require 'savon'
 
 client = Savon.client(
-  wsdl: 'https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL'
+  wsdl:                    'https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL',
+  log:                     false,
+  wsse_auth:               nil, #[ENV['username'], ENV['password']],
+  pretty_print_xml:        false,
+  convert_request_keys_to: :none
 )
 
 client.operations
 
-response = client.call(:number_to_dollars, message: { d_num: 500 })
+response = client.call(:number_to_dollars, message: { dNum: 500 })
 
 if response.success?
   puts response.body
