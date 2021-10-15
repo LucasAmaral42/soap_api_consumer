@@ -8,8 +8,6 @@ client = Savon.client(
   convert_request_keys_to: :none
 )
 
-client.operations
-
 response = client.call(:number_to_dollars, message: { dNum: 500 })
 
 if response.success?

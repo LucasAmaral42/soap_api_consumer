@@ -1,14 +1,14 @@
 require 'savon'
 
 client = Savon.client(
-  wsdl:                    'https://www.dataaccess.com/webservicesserver/NumberConversion.wso?WSDL',
+  wsdl:                    'http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso?WSDL',
   log:                     false,
   wsse_auth:               nil, #[ENV['username'], ENV['password']],
   pretty_print_xml:        false,
   convert_request_keys_to: :none
 )
 
-response = client.call(:number_to_words, message: { ubiNum: 500 })
+response = client.call(:country_int_phone_code, message: { sCountryISOCode: 'BR' })
 
 if response.success?
   puts response.body
